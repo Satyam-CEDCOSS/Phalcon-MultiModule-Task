@@ -1,0 +1,84 @@
+<body>
+<!--Main Navigation-->
+<header>
+    <!-- Jumbotron -->
+    <div class="p-3 text-center bg-white border-bottom">
+      <div class="container">
+        <div class="row gy-3">
+          <!-- Left elements -->
+          <div class="col-lg-2 col-sm-4 col-4">
+            <b style="font-size: 2em; margin-right: 30px;">C</b>
+          </div>
+          <!-- Left elements -->
+
+          <!-- Right elements -->
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+
+    <!-- Navbar -->
+    <!-- Jumbotron -->
+    <div class="bg-primary text-white py-5">
+      <div class="container py-5">
+        <h1>
+          Best products & <br />
+          brands in our store
+        </h1>
+        <p>Trendy Products, Factory Prices, Excellent Service</p>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </header>
+
+  <!-- Products -->
+  <section>
+    <div class="container my-5">
+      <header class="mb-4">
+        <h3>New products</h3>
+      </header>
+      <?php
+      foreach ($data as $value) {
+        $main .= '<div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+              <div class="card w-100 my-2 shadow-2-strong">
+                <img src='.$value->image.
+                ' class="card-img-top" style="aspect-ratio: 1 / 1" />
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title">' . $value->name . '</h6>
+                  <h6 class="card-title"><b>Company: </b>' . $value->company . '</h6>
+                  <p class="card-text"><b>Price: </b> $' . $value->price . '</p>
+                  <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
+                    <a href="/detail?id='.$value->_id.
+                    '" class="btn btn-primary shadow-0 me-1">Detail View</a>
+                  </div>
+                </div>
+              </div>
+            </div>';
+        }
+        echo $main;
+      ?>
+    </div>
+  </section>
+  <!-- Products -->
+
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-muted mt-3" style="background-color: #f5f5f5">
+
+    <div class="">
+      <div class="container">
+        <div class="d-flex justify-content-between py-4 border-top">
+          <!--- payment --->
+          <div>
+            <i class="fab fa-lg fa-cc-visa text-dark"></i>
+            <i class="fab fa-lg fa-cc-amex text-dark"></i>
+            <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
+            <i class="fab fa-lg fa-cc-paypal text-dark"></i>
+          </div>
+          <!--- payment --->
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer -->
+</body>

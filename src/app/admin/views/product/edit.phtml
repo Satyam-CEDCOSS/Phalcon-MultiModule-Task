@@ -1,0 +1,16 @@
+<h1>Update</h1>
+
+<h3>Add</h3>
+<form action="../admin/update?id=<?php echo $data->_id?>" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="<?php echo $data->name?>" class="form-control">
+    <label for="company">Company</label>
+    <input type="text" id="company" name="company" value="<?php echo $data->company?>" class="form-control">
+    <label for="quantity">Quantity</label>
+    <input type="text" id="quantity" name="quantity" value="<?php echo $data->quantity?>" class="form-control">
+    <label for="name">Price</label>
+    <input type="text" id="price" name="price" value="<?php echo $data->price?>" class="form-control">
+    <label for="name">Image</label>
+    <input type="text" id="image" name="image" value="<?php echo $data->image?>" class="form-control">
+    <button class="btn btn-success my-3">Update</button>
+</form>
