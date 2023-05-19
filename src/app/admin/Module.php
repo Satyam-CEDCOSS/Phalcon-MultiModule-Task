@@ -7,6 +7,8 @@ use Phalcon\Di\DiInterface;
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\ModuleDefinitionInterface;
 use Phalcon\Mvc\View;
+use Phalcon\Logger;
+use Phalcon\Logger\Adapter\Stream;
 
 class Module implements ModuleDefinitionInterface
 {
@@ -50,6 +52,20 @@ class Module implements ModuleDefinitionInterface
                 );
 
                 return $view;
+            }
+        );
+
+        $container->set(
+            'logger',
+            function () {
+                $adapter = new Stream(APP_PATH .'/admin/logs/login.log');
+                $logger  = new Logger(
+                    'messages',
+                    [
+                        'login' => $adapter,
+                    ]
+                );
+                return $logger;
             }
         );
     }

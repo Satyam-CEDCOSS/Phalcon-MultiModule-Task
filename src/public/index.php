@@ -3,6 +3,9 @@
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\Application;
 use Phalcon\Mvc\Router;
+use Phalcon\Logger;
+use Phalcon\Logger\Adapter\Stream;
+
 
 use Phalcon\Config;
 
@@ -14,7 +17,7 @@ $config = new Config([]);
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');
 
-require_once BASE_PATH."/vendor/autoload.php";
+require_once BASE_PATH . "/vendor/autoload.php";
 
 $container = new FactoryDefault();
 
